@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/Home.css";
 import "../Styles/Slider.css"
-import Slider from "./Slide";
 import { Link } from "react-router-dom";
 export default function Home() {
     const [title,settitle] = useState(0)
@@ -64,7 +63,7 @@ export default function Home() {
         <div className="contentc2 mt-10 flex justify-evenly w-[100%] items-center flex-wrap flex-row-reverse p-7 gap-10">
             <img width={"400px"} className="image" src={require("../img/_7ffe7167-7048-490e-bd17-54f3ff8912dd.jpeg")}/>
             <h2 className="w-[900px] text-tra translate-x-[-1200px] lg:text-[30px] md:text-[25px] sm:text-[22px] text-[20px]">
-                نوفر هنا كل الادوات التي يحتاجها المسلم من مواقيت الصلاة و الاذكار و الاحاديث و غيره من الادوات التي تفيد المسمل في رمضان و باقي ايام السنة و غيرها من الادوات
+                نوفر هنا كل الادوات التي يحتاجها المسلم من مواقيت الصلاة و الاذكار و الاحاديث و غيره من الادوات التي تفيد المسلم في رمضان و باقي ايام السنة و غيرها من الادوات
                 <li className="text-[22px] mt-10">
             مواقيت الصلاة: يمكن للمستخدمين العثور على أوقات الصلاة الدقيقة لمدينتهم
                 </li>
@@ -79,9 +78,6 @@ export default function Home() {
                 </li>
             </h2>
         </div>
-      </div>
-      <div className="c3 flex justify-center items-center p-10">
-        <Slider />
       </div>
       <div className="c4 h-auto mt-10 flex bg-[#9BB8CD] justify-evenly items-center flex-wrap lg:flex-row md:flex-row sm:flex-row flex-col">
             <Link className="font-bold text-[23px]">
