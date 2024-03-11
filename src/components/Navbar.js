@@ -1,18 +1,22 @@
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
+
 const navigation = [
   { name: 'الصفحة الرئيسية', to: '/', current: true },
   { name: 'الصلوات', to: '/salat', current: false },
   { name: 'الاذكار', to: '/azkar', current: false },
   { name: 'عنا', to: '#', current: false },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
+  const [currentNavItem, setCurrentNavItem] = useState(navigation.find(item => item.current));
+
   return (
     <Disclosure as="nav" className="bg-gray-800 z-50 sticky top-0 mt-1">
       {({ open }) => (
@@ -20,7 +24,6 @@ export default function Navbar() {
           <div className="mx-auto max-w-7xl z-20 px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-center">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
@@ -44,10 +47,10 @@ export default function Navbar() {
                         key={item.name}
                         to={item.to}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item === currentNavItem ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        onClick={() => setCurrentNavItem(item)}
                       >
                         {item.name}
                       </Link>
@@ -65,10 +68,10 @@ export default function Navbar() {
                   key={item.name}
                   to={item.to}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item === currentNavItem ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  onClick={() => setCurrentNavItem(item)}
                 >
                   {item.name}
                 </Link>
@@ -78,5 +81,5 @@ export default function Navbar() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }

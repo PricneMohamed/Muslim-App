@@ -79,7 +79,7 @@ export default function Home() {
             </h2>
         </div>
       </div>
-      <div className="c4 h-auto mt-10 flex bg-[#9BB8CD] justify-evenly items-center flex-wrap lg:flex-row md:flex-row sm:flex-row flex-col">
+      <div className="c4 h-[30vh] mt-10 flex bg-[#9BB8CD] justify-evenly items-center flex-wrap lg:flex-row md:flex-row sm:flex-row flex-col">
             <Link className="font-bold text-[23px]">
                 امير الاسلام
             </Link>
