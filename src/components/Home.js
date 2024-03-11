@@ -55,7 +55,7 @@ export default function Home() {
            الصلوات
         </Link>
       </div>
-      <div className="c2 h-[100vh] mt-20 flex items-center flex-col">
+      <div className="c2 h-auto mt-20 flex items-center flex-col">
         <h1 className="lg:text-[40px] whitespace-nowrap md:text-[35px] sm:text-[30px] text-[25px]">
             ماذا يوجد هنا؟
         </h1>
@@ -80,13 +80,13 @@ export default function Home() {
         </div>
       </div>
       <div className="c4 h-[30vh] mt-10 flex bg-[#9BB8CD] justify-evenly items-center flex-wrap lg:flex-row md:flex-row sm:flex-row flex-col">
-            <Link className="font-bold text-[23px]">
+            <Link to={"/"} className="font-bold text-[23px]">
                 امير الاسلام
             </Link>
-            <Link className="font-bold text-[23px]">
+            <Link to={"/salat"} className="font-bold text-[23px]">
             الصلوات 
             </Link>
-            <Link className="font-bold text-[23px]">
+            <Link to={"/azkar"} className="font-bold text-[23px]">
                 الاذكار
             </Link>
             <Link className="font-bold text-[23px]">
